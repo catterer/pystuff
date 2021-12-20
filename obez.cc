@@ -34,7 +34,6 @@ int solve(int stores, int nuts) {
 
     SolutionMap solmap(stores + 1, std::vector<int>(nuts + 1, -1));
     int rc = solve(solmap, stores, nuts);
-    std::cout << stores << ", " << nuts << " -> " << rc << "\n";
     return rc;
 }
 
