@@ -6,7 +6,21 @@
 struct Cell {
     int age; // -1 means "not a microb"
     friend std::ostream& operator<<(std::ostream& out, const Cell& cell) {
-        out << (cell.age <= 0 ? ' ' : '*');
+        switch (cell.age) {
+        case -1:    out << ' '; break;
+        case 0:     out << ' '; break;
+        case 1:     out << '.'; break;
+        case 2:     out << '\''; break;
+        case 3:     out << ','; break;
+        case 4:     out << '"'; break;
+        case 5:     out << ':'; break;
+        case 6:     out << ';'; break;
+        case 7:     out << '|'; break;
+        case 8:     out << '+'; break;
+        case 9:     out << '*'; break;
+        case 10:    out << '@'; break;
+        case 11:    out << '$'; break;
+        }
         return out;
     }
     void kill() { if (age > 0) age = 0; }
